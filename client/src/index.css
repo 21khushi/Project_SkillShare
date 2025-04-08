@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100vw;  /* ✅ Full width */
+      height: 100vh;
+      overflow-x: hidden;  /* ✅ Prevents unwanted horizontal scrolling */
+      overflow-y: auto;  /* ✅ Allows vertical scrolling */
+  }
+   
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, rgba(0, 183, 255, 1), rgba(255, 77, 97, 1)); /* Vibrant Gradient */
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite; /* Animated gradient */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* overflow: hidden;
+    position: relative; */
+    height: 100vh; /* Ensure body takes full viewport height */
+  }
+  .App, .container {
+    min-height: 100vh; /* Allow content to stretch beyond the viewport if needed */
+    overflow: auto;    /* Ensure overflow behavior allows scrolling */
+  }
+  .root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;  /* This ensures the content takes up available space and can overflow */
+    overflow: auto;
+  }
+  
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Main content container, ensuring it stays in one section */
+  .main-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; /* Limit width to keep it within one section */
+  }
+  
+  h1, p {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: white;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Button styling */
+  button {
+    background: rgba(255, 77, 97, 1);
+    border: none;
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: rgba(0, 183, 255, 1);
+    transform: translateY(-5px);
+  }
+  
+  /* Smooth transitions for background changes */
+  button:active {
+    transform: translateY(2px);
+  }
+  
+  /* Subtle pulse effect for buttons */
+  button:focus {
+    outline: none;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Floating particles effect for a lively feel */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: floatParticle 8s linear infinite;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure particles don't cover main content */
+  }
+  
+  @keyframes floatParticle {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
