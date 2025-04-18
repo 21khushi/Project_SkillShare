@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -149,3 +150,67 @@
       transform: translate(-50%, -50%) scale(1);
     }
   }
+=======
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: #ffff;
+  background-size: 400% 400%;
+ overflow: hidden; 
+  overflow-y:auto; 
+    position: relative;
+  color: #fff;
+}
+
+/* 🎨 Smooth dark gradient shift */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌟 Big glowing particles */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: animateParticles 30s linear infinite;
+  opacity: 1;
+}
+
+body::before {
+  background-image:
+    radial-gradient(circle at 20% 40%, rgba(255, 255, 0, 0.2) 200px, transparent 300px),
+    radial-gradient(circle at 80% 60%, rgba(255, 0, 0, 0.18) 250px, transparent 350px);
+  animation-direction: normal;
+}
+
+body::after {
+  background-image:
+    radial-gradient(circle at 60% 20%, rgba(255, 200, 0, 0.1) 300px, transparent 400px),
+    radial-gradient(circle at 30% 70%, rgba(255, 50, 50, 0.1) 280px, transparent 400px);
+  animation-direction: reverse;
+}
+
+@keyframes animateParticles {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 1000px 1000px, -800px -800px; }
+}
+
+/* Ensure root app content stays on top */
+#root {
+  position: relative;
+  z-index: 1;
+}
+>>>>>>> bd8644c (final changes)

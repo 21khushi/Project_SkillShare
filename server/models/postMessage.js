@@ -6,6 +6,10 @@ const postSchema = mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   creator: { type: String, required: true },
+<<<<<<< HEAD
+=======
+  email: { type: String, required: false },  // Added email field
+>>>>>>> bd8644c (final changes)
   skills: { type: [String], default: [] },
   // New advanced content fields:
   category: { type: String, default: 'General' },

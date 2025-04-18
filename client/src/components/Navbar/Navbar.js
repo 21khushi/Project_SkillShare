@@ -108,8 +108,19 @@ const Navbar = () => {
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose} className={classes.menu}>
         <MenuItem onClick={handleMenuClose} component={Link} to="/profile">Profile</MenuItem>
         <MenuItem onClick={handleMenuClose} component={Link} to="/saved-posts">Saved Posts</MenuItem>
+<<<<<<< HEAD
       <MenuItem onClick={handleMenuClose} component={Link} to="/auth">Login / Signup</MenuItem>
          <MenuItem onClick={handleMenuClose} component={Link} to="/create-post">Edit / Create Post</MenuItem>
+=======
+        <MenuItem onClick={handleMenuClose} component={Link} to="/auth">Login / Signup</MenuItem>
+        {user?.user?.role === 'admin' && (
+          <>
+            <MenuItem onClick={handleMenuClose} component={Link} to="/create-post">Edit / Create Post</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={Link} to="/pending-requests">Pending Requests</MenuItem>
+          </>
+        )}
+        <MenuItem onClick={handleMenuClose} component={Link} to="/view-all-posts">View All Post</MenuItem>
+>>>>>>> bd8644c (final changes)
         </Menu>
       </Toolbar>
     </AppBar>

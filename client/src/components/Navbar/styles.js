@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { makeStyles } from '@mui/styles';
 
 // export default makeStyles(() => ({
@@ -95,6 +96,8 @@
 
 
 
+=======
+>>>>>>> bd8644c (final changes)
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
@@ -102,6 +105,7 @@ export default makeStyles(() => ({
     width: '100vw',
     height: '80px',
     padding: '10px 30px',
+<<<<<<< HEAD
     background: 'linear-gradient(120deg, #F8BBD0 0%, #D1C4E9 100%) !important',  
     position: 'fixed',
     top: '0px',
@@ -111,16 +115,53 @@ export default makeStyles(() => ({
     display: 'flex',
     alignItems: 'center',
   },
+=======
+    background: 'linear-gradient(90deg, #b2ebf2, #f8bbd0, #fff9c4, #c8e6c9)', // Light gradient background
+    backgroundSize: '400% 400%',
+    animation: '$gradientFlow 12s ease infinite',
+    backdropFilter: 'blur(8px)',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    zIndex: 1500,
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+    display: 'flex',
+    alignItems: 'center',
+    borderBottom: '2px solid #ff80ab',
+  },
+
+>>>>>>> bd8644c (final changes)
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
   },
+<<<<<<< HEAD
+=======
+
+  title: {
+    flexGrow: 1,
+    textAlign: 'center',
+    fontSize: '2.4rem',
+    fontWeight: 800,
+    fontFamily: "'Poppins', sans-serif",
+    color: '#C2185B', // Dark pink
+    letterSpacing: '2px',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.08)',
+    },
+  },
+  
+
+>>>>>>> bd8644c (final changes)
   profile: {
     display: 'flex',
     alignItems: 'center',
     gap: '12px',
+<<<<<<< HEAD
     marginLeft: '20px',  // ✅ Push profile to the left
   },
   avatar: {
@@ -154,3 +195,53 @@ export default makeStyles(() => ({
 
 
 
+=======
+    marginLeft: '20px',
+  },
+
+  avatar: {
+    backgroundColor: '#ff80ab',
+    color: '#fff',
+    width: '44px',
+    height: '44px',
+    fontSize: '1.1rem',
+    fontWeight: 'bold',
+  },
+
+  userName: {
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    color: '#f5f5f5',
+  },
+
+  rightSection: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '18px',
+  },
+
+  homeButton: {
+    background: 'linear-gradient(135deg, #fff176, #f48fb1, #81d4fa, #a5d6a7)',
+    backgroundSize: '300% 300%',
+    animation: '$gradientFlow 8s ease infinite',
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: '0.95rem',
+    padding: '10px 20px',
+    borderRadius: '10px',
+    textTransform: 'uppercase',
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+    },
+  },
+
+  '@keyframes gradientFlow': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
+}));
+>>>>>>> bd8644c (final changes)

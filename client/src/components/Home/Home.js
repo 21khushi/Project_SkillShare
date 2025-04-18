@@ -43,7 +43,10 @@
 import React, { useEffect } from 'react';
 import { Container, Grow, Grid2 } from '@mui/material';
 import { useDispatch } from 'react-redux';
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd8644c (final changes)
 import Posts from '../Posts/Posts';
 import { getPosts } from '../../actions/posts';
 

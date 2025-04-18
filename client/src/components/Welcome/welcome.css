@@ -1,0 +1,90 @@
+.welcome-screen {
+    position: fixed;              /* Ensure it stays full screen */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease forwards;
+    overflow: hidden;
+    z-index: 999;                 /* Ensure it's above everything */
+  }
+  .welcome-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .yellow-box {
+    background: rgba(255, 235, 59, 0.1);
+    border: 2px solid #ffee58;
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 235, 59, 0.3);
+    animation: slideInCenter 1s ease-out forwards;
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  
+  /* Glowing animated heading */
+  .welcome-heading {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ff4081;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow:
+      0 0 10px rgba(255, 64, 129, 0.7),
+      0 0 20px rgba(255, 64, 129, 0.4),
+      0 0 30px rgba(255, 64, 129, 0.2);
+   
+  }
+  
+  
+  /* Button layout */
+  .welcome-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Button styling */
+  .welcome-btn {
+    background-color: #00bcd4 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px 24px !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+    transition: all 0.3s ease-in-out !important;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+  }
+  
+  .welcome-btn:hover {
+    background-color: transparent !important;
+    color: #00bcd4 !important;
+    border: 2px solid #00bcd4 !important;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes slideInCenter {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

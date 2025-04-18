@@ -24,7 +24,11 @@ export default makeStyles(() => ({
   mainContainer: {
     display: 'flex',
     alignItems: 'center',
+<<<<<<< HEAD
     flexDirection: 'column',
+=======
+    flexDirection: 'row',
+>>>>>>> bd8644c (final changes)
     marginTop: '140px',  // ✅ Adjusted space below navbar
   },
   smMargin: {

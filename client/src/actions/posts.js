@@ -74,7 +74,15 @@ export const requestAccess = (postId, requestData) => async (dispatch) => {
       return;
     }
 
+<<<<<<< HEAD
     await API.patch(`/posts/${postId}/requestAccess`, requestData);
+=======
+    // Add user's email to requestData
+    const userEmail = user.result.email || user.result?.user?.email || null;
+    const requestDataWithEmail = { ...requestData, userEmail };
+
+    await API.patch(`/posts/${postId}/requestAccess`, requestDataWithEmail);
+>>>>>>> bd8644c (final changes)
 
     alert("✅ Your request has been sent");
   } catch (error) {
@@ -92,3 +100,17 @@ export const getPendingRequests = (userId) => async (dispatch) => {
     console.error("Error fetching pending requests:", error);
   }
 };
+<<<<<<< HEAD
+=======
+
+// Approve or reject access request
+export const handleAccessRequest = (postId, requestId, status) => async (dispatch) => {
+  try {
+    const { data } = await API.patch(`/posts/${postId}/accessRequests/${requestId}`, { status });
+    return data;
+  } catch (error) {
+    console.error(`Error handling access request:`, error);
+    throw error;
+  }
+};
+>>>>>>> bd8644c (final changes)

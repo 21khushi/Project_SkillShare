@@ -11,6 +11,10 @@ const Form = ({ currentId, setCurrentId }) => {
     title: '',
     description: '',
     creator: '',
+<<<<<<< HEAD
+=======
+    email: '',  // Added email field
+>>>>>>> bd8644c (final changes)
     skills: '',
     category: '',
     mediaType: 'image',
@@ -86,6 +90,17 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) => setPostData({ ...postData, creator: e.target.value })}
         />
         <TextField
+<<<<<<< HEAD
+=======
+          name="email"
+          variant="outlined"
+          label="Email (optional)"
+          fullWidth
+          value={postData.email}
+          onChange={(e) => setPostData({ ...postData, email: e.target.value })}
+        />
+        <TextField
+>>>>>>> bd8644c (final changes)
           name="title"
           variant="outlined"
           label="Title"
