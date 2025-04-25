@@ -8,7 +8,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import postRoutes from './routes/post.js';
-import authRoutes from './routes/auth.js'
+import authRoutes from './routes/auth.js';
+import requestAccessRoutes from './routes/requestAccess.js'; // ✅ NEW
+
 const app = express();
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
@@ -16,12 +18,12 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.use('/posts', postRoutes);
-app.use('/auth',authRoutes);
+app.use('/auth', authRoutes);
+app.use('/request-access', requestAccessRoutes); // ✅ NEW
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 
-// Debugging: Check if the connection URL is loaded
 console.log("MongoDB Connection URL:", CONNECTION_URL);
 
 mongoose

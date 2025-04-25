@@ -3,17 +3,19 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// ✅ Create transporter using environment variables
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // or your email service
+  service: 'gmail',
   auth: {
-    user: "gunnusikka21@gmail.com",
-    pass: "deemiuidozdqnnpk",
+    user: process.env.EMAIL_USER, // Use environment variables for safety
+    pass: process.env.EMAIL_PASS,
   },
 });
 
+// ✅ Function to send request access email
 const sendRequestAccessEmail = async (toEmail, requesterName, postTitle, requesterEmail) => {
   const mailOptions = {
-    from: "gunnusikka21@gmail.com",
+    from: process.env.EMAIL_USER,
     replyTo: requesterEmail,
     to: toEmail,
     subject: `Access Request for Your Post: ${postTitle}`,
@@ -32,7 +34,6 @@ SkillShare Team`,
     console.log('Access request email sent:', info.response);
   } catch (error) {
     console.error('Error sending access request email:', error);
-    console.error('Mail options were:', mailOptions);
     throw error;
   }
 };

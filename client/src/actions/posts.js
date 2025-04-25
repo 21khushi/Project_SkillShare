@@ -4,7 +4,7 @@ import * as api from '../api/index.js';
 
 const API = axios.create({ baseURL: "http://localhost:5000" });
 
-// ✅ Fetch All Posts
+//  Fetch All Posts
 export const getPosts = () => async (dispatch) => {
   try {
     const { data } = await api.fetchPosts();
@@ -15,7 +15,7 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
-// ✅ Create Post
+//  Create Post
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);
@@ -26,7 +26,7 @@ export const createPost = (post) => async (dispatch) => {
   }
 };
 
-// ✅ Update Post
+//  Update Post
 export const updatePost = (id, post) => async (dispatch) => {
   try {
     const { data } = await api.updatePost(id, post);
@@ -36,7 +36,7 @@ export const updatePost = (id, post) => async (dispatch) => {
   }
 };
 
-// ✅ Delete Post
+// Delete Post
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
@@ -46,7 +46,7 @@ export const deletePost = (id) => async (dispatch) => {
   }
 };
 
-// ✅ Like Post
+//  Like Post
 export const likePost = (id) => async (dispatch) => {
   try {
     const { data } = await api.likePost(id);
@@ -56,7 +56,7 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
-// ✅ Save Post
+//  Save Post
 export const savePost = (id) => async (dispatch) => {
   try {
     dispatch({ type: SAVE_POST, payload: id });
@@ -65,7 +65,7 @@ export const savePost = (id) => async (dispatch) => {
   }
 };
 
-// ✅ Request Access to a Post
+//  Request Access to a Post
 export const requestAccess = (postId, requestData) => async (dispatch) => {
   try {
     const user = JSON.parse(localStorage.getItem("profile"));
@@ -91,7 +91,7 @@ export const requestAccess = (postId, requestData) => async (dispatch) => {
 };
 
 
-// ✅ Get Pending Requests
+// Get Pending Requests
 export const getPendingRequests = (userId) => async (dispatch) => {
   try {
     const { data } = await API.get(`/posts/pendingRequests/${userId}`);
